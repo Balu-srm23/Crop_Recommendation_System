@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Crop Recommendation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <span class="icon">🌾</span>
+                <h1>Agri<span class="highlight">Smart</span></h1>
+            </div>
+            <p class="subtitle">Precision Agriculture for Better Yields</p>
+        </header>
+
+        <main>
+            <div class="card form-card">
+                <h2>Enter Soil & Climate Data</h2>
+                <form id="predictionForm">
+                    <div class="grid-container">
+                        <div class="input-group">
+                            <label for="N">Nitrogen (N)</label>
+                            <input type="number" id="N" name="N" placeholder="e.g. 90" required min="0" max="140">
+                        </div>
+                        <div class="input-group">
+                            <label for="P">Phosphorus (P)</label>
+                            <input type="number" id="P" name="P" placeholder="e.g. 42" required min="0" max="145">
+                        </div>
+                        <div class="input-group">
+                            <label for="K">Potassium (K)</label>
+                            <input type="number" id="K" name="K" placeholder="e.g. 43" required min="0" max="205">
+                        </div>
+                        <div class="input-group">
+                            <label for="temperature">Temperature (°C)</label>
+                            <input type="number" id="temperature" name="temperature" placeholder="e.g. 20.8" step="0.1" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="humidity">Humidity (%)</label>
+                            <input type="number" id="humidity" name="humidity" placeholder="e.g. 82.0" step="0.1" required min="0" max="100">
+                        </div>
+                        <div class="input-group">
+                            <label for="ph">pH Level</label>
+                            <input type="number" id="ph" name="ph" placeholder="e.g. 6.5" step="0.1" required min="0" max="14">
+                        </div>
+                        <div class="input-group full-width">
+                            <label for="rainfall">Rainfall (mm)</label>
+                            <input type="number" id="rainfall" name="rainfall" placeholder="e.g. 202.9" step="0.1" required min="0">
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="cta-button">
+                        Predict Best Crop <span class="arrow">→</span>
+                    </button>
+                </form>
+            </div>
+
+            <div id="resultContainer" class="card result-card hidden">
+                <div class="result-content">
+                    <h3>Recommended Crop</h3>
+                    <div class="crop-display">
+                        <span class="crop-icon">🌱</span>
+                        <h2 id="cropName">--</h2>
+                    </div>
+                    <div class="confidence-meter">
+                        <span class="label">Confidence Score</span>
+                        <div class="meter-bg">
+                            <div id="confidenceBar" class="meter-fill" style="width: 0%"></div>
+                        </div>
+                        <span id="confidenceValue">0%</span>
+                    </div>
+                    <button id="resetButton" class="secondary-button">Check Another</button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 AgriSmart Intelligence Systems</p>
+        </footer>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

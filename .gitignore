@@ -1,0 +1,18 @@
+# Byte-compiled / caches
+__pycache__/
+*.pyc
+
+# virtual env
+venv/
+.env
+
+# model and large artifacts
+
+*.pkl
+
+# VS Code
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
