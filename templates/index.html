@@ -74,6 +74,25 @@
                         </div>
                         <span id="confidenceValue">0%</span>
                     </div>
+
+                    <div id="aiInsightSection" class="hidden">
+                        <div class="ai-insight-container">
+                            <div class="ai-insight-header">
+                                <span class="icon">🤖</span>
+                                <h4>AI Analysis</h4>
+                            </div>
+                            <p id="aiExplanationText" class="ai-insight-text">Analyzing conditions...</p>
+                        </div>
+
+                        <div class="ai-insight-container">
+                            <div class="ai-insight-header">
+                                <span class="icon">🧪</span>
+                                <h4>Recommended Fertilizer</h4>
+                            </div>
+                            <p id="fertilizerText" class="ai-insight-text">Fetching fertilizer data...</p>
+                        </div>
+                    </div>
+
                     <button id="resetButton" class="secondary-button">Check Another</button>
                 </div>
             </div>
@@ -82,7 +101,41 @@
         <footer>
             <p>&copy; 2025 AgriSmart Intelligence Systems</p>
         </footer>
+        </div>
     </div>
+
+    <!-- Floating Chatbot Widget -->
+    <div id="chatWidget" class="chat-widget">
+        <button id="chatToggle" class="chat-toggle">
+            <span class="chat-icon">💬</span>
+            <span class="chat-label">Ask AgriBot</span>
+        </button>
+        <div id="chatContainer" class="chat-container hidden">
+            <div id="chatHeader" class="chat-header">
+                <span>🤖 AgriBot</span>
+                <div class="chat-header-controls">
+                    <select id="chatLanguage" class="chat-language" title="Select Voice Language">
+                        <option value="English">English</option>
+                        <option value="Hindi">हिंदी (Hindi)</option>
+                        <option value="Telugu">తెలుగు (Telugu)</option>
+                        <option value="Tamil">தமிழ் (Tamil)</option>
+                        <option value="Marathi">मराठी (Marathi)</option>
+                        <option value="Kannada">ಕನ್ನಡ (Kannada)</option>
+                    </select>
+                    <button id="chatClose" class="chat-close">×</button>
+                </div>
+            </div>
+            <div id="chatMessages" class="chat-messages"></div>
+            <div class="chat-input-container">
+                <input type="text" id="chatInput" placeholder="Ask about crops, soil, farming..." maxlength="500">
+                <button id="chatMic" class="chat-mic" title="Use Voice Control">🎤</button>
+                <button id="chatMute" class="chat-mute" title="Toggle Voice Output">🔊</button>
+                <button id="chatSend" class="chat-send">Send</button>
+            </div>
+            <div id="chatTyping" class="chat-typing hidden">AgriBot is typing...</div>
+        </div>
+    </div>
+
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>

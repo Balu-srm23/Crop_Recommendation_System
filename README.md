@@ -62,13 +62,45 @@ This generates `best_model.pkl` used for predictions.
 
 ---
 
-## 🌐 Run the Web App
+## 🚀 NEW: AgriBot AI Chatbot
+Meet the fully advanced AI agricultural assistant! Floating chat widget (bottom-right).
 
-Start the Flask server:
+**Features:**
+- 🌍 **Multilingual:** Supports English, Hindi, Telugu, Tamil, Marathi, and Kannada.
+- 🎤 **Voice Enabled:** Speech-to-text input and natural Text-to-Speech output.
+- 🧠 **Context-Aware:** Remembers follow-up questions during your session.
+- 🌾 **Strict Domain Control:** Focuses 100% on crops, fertilizers, soils, and farming.
+- 🎨 **Modern UI:** Chat bubbles, typing indicators, mic button, and mute switch.
+
+## ⚙️ Installation & Setup
+
+1. **Install dependencies:**
+```bash
+pip install -r requirements.txt
+```
+
+2. **Set up API keys:**
+```bash
+cp .env.example .env
+# Edit .env: GEMINI_API_KEY="your_key_here"
+```
+Get free Gemini API key: https://aistudio.google.com/app/apikey
+
+3. **Train model (optional):**
+```bash
+python train_model.py
+```
+
+4. **Run app:**
 ```bash
 python app.py
 ```
-Then open your browser at: [http://127.0.0.1:5000](http://127.0.0.1:5000)
+Visit: http://127.0.0.1:5000
+
+**Features:**
+- ML Crop Prediction (form)
+- AgriBot Chat (agriculture only)
+- Both work together!
 
 ---
 
